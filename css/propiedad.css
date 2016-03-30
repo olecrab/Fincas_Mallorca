@@ -1,0 +1,178 @@
+div#tot {
+    margin-top: 85px;
+}
+
+div#main_r{
+	padding: inherit;
+}
+
+div#contingut_dreta{
+	margin: auto;
+	background: rgba(171, 171, 171, 0.3)!important;
+	border-radius: 10px;
+	margin-top: 0px;
+}
+
+div#contingut_dreta_preu{
+	margin: auto;
+	margin-top: 10px;
+}
+
+div#slider{
+	padding: inherit;
+	margin-bottom: 4px;
+	border-width: 2px;
+}
+div#carousel{
+	margin-bottom: 10px;
+	border-width: 2px;
+}
+button#preu{
+	width: 100%;
+	font-size: 25px;
+}
+h2#titol{
+	color: #337AB7;
+}
+
+h4#val{
+	color: #337AB7;
+	margin: 0px;
+	margin-left: 5px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+div#estrelles{
+	background: rgba(171, 171, 171, 0.3)!important;
+	border-radius: 10px;
+	padding: 5px;
+}
+
+hr{
+  color: #337AB7;
+  background-color: #337AB7;
+  height: 2px;
+  margin-bottom: 10px;
+  margin-top: 0px;
+}
+
+ul#lista{
+	padding: 0px;
+	list-style-type: none;
+}
+ul#lista1{
+	padding: 0px;
+	list-style-type: none;
+}
+
+div#descripcio{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+div#pad{
+	padding: 10px;
+	width: 100%;
+}
+
+
+div#comentari{
+	margin: auto;
+	border-radius: 10px;
+	border-color: grey;
+	border-width: 1px;
+	border-radius: 10px;
+	margin-top: 30px;
+	background-color: rgba(51,122,183,0.1)!important;
+}
+
+div#cm{
+	padding: 10px;
+	background-color: #EBEDED;
+}
+
+div#scr{
+	overflow: scroll;
+	max-height: 400px;
+	padding: 0px;
+	margin-top: 30px;
+}
+
+div#datepicker{
+	margin-top: 20px;
+}
+
+input#date-range12{
+	visibility: hidden;
+}
+
+div#content{
+	width: 100%;
+}
+
+.table th {
+	color: orange;
+	font-size: 15px;
+    text-align:center;
+}
+.table td {
+    text-align:center;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+li#coment{
+	margin-top: 0px;
+}
+
+h4#nom_comment{
+	color: #337AB7;
+	font-size: 15px;
+}
+
+h6#nota{
+	color: rgba(170,170,170,1)!important;
+	font-size: 12px;
+	font-style: oblique;
+}
+
+th#mes {
+    font-weight: lighter;
+}
+
+.hidden { display: none; }
+
+div#recuadre{
+	padding: 15px;
+	border-radius: 15px;
+	background-color: rgb(235, 237, 237);
+}
+
+h4#datos_reserva{
+	color: #337AB7;
+	margin-top: 0px;
+}
+
+.gracias{
+	margin-top: 20px;
+	margin-bottom: 20px;
+    text-align: center;	
+	color: #337AB7;
+}
+
+img#icon_carac{
+	max-width: 18px;
+	max-height: 18px;
+}
+
+p#carac{
+	margin-top: 3px;
+}
+
+div#carac{
+	display: flex;
+}
