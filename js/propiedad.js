@@ -1,4 +1,5 @@
 var codi_finca;
+var preu_mensual = [];
 function initCal(d)
 {
     var dies = d;
@@ -37,6 +38,7 @@ function initCal(d)
         $('#pagament').removeClass('hidden');
         $('#entrada').val(str.substr(0, str.indexOf("#")));
         $('#salida').val(str.substr(str.indexOf("#")+1), str.length);
+        calcularImporte();
     });
 }
 
@@ -84,7 +86,7 @@ function pintarCalendari(xml, codi){
     for (i = 0; i < fincas.length; i++) {
         if (parseInt(fincas[i].getElementsByTagName('codi')[0].textContent) == codi) {
             finca = fincas[i];
-            break
+            break;
         }
     }
 
@@ -110,6 +112,20 @@ function pintarCalendari(xml, codi){
             dies.push(new Date(d1));
         }
     }
+    //Aprofitam per agafar el preu mensual de les finques
+    var precio = (finca.getElementsByTagName('precio')[0]);
+    preu_mensual[0] = parseInt(precio.getElementsByTagName('enero')[0].textContent);
+    preu_mensual[1] = parseInt(precio.getElementsByTagName('febrero')[0].textContent);
+    preu_mensual[2] = parseInt(precio.getElementsByTagName('marzo')[0].textContent);
+    preu_mensual[3] = parseInt(precio.getElementsByTagName('abril')[0].textContent);
+    preu_mensual[4] = parseInt(precio.getElementsByTagName('mayo')[0].textContent);
+    preu_mensual[5] = parseInt(precio.getElementsByTagName('junio')[0].textContent);
+    preu_mensual[6] = parseInt(precio.getElementsByTagName('julio')[0].textContent);
+    preu_mensual[7] = parseInt(precio.getElementsByTagName('agosto')[0].textContent);
+    preu_mensual[8] = parseInt(precio.getElementsByTagName('septiembre')[0].textContent);
+    preu_mensual[9] = parseInt(precio.getElementsByTagName('octubre')[0].textContent)
+    preu_mensual[10] = parseInt(precio.getElementsByTagName('noviembre')[0].textContent);
+    preu_mensual[11] = parseInt(precio.getElementsByTagName('diciembre')[0].textContent);
 }
 
 function cal(codi) {
@@ -317,4 +333,29 @@ function reserva(){
     });
     //Retornam null xq sa web no actualitzi
     return false;
-}       
+}      
+
+function calcularImporte(){
+    var entrada = $('#entrada').val();
+    var sortida = $('#salida').val();
+    var date_entrada = moment(entrada, "DD/MM/YYYY").toDate();
+    var date_salida = moment(sortida, "DD/MM/YYYY").toDate();
+    var de = new Date(date_entrada);
+    var ds = new Date(date_salida);
+
+    var e = parseInt(de.getTime());
+    var s = parseInt(ds.getTime());
+    var timeDiff = Math.abs(s - e);
+    var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+    diffDays = diffDays + 1;
+
+    var importe = 0;
+
+    for (i = 0; i < diffDays; i++) {
+        var mes = de.getMonth();
+        importe = importe + preu_mensual[mes];
+        de.setDate(de.getDate() + 1);
+    }
+    $('#precio').val(importe+' euros');
+
+} 

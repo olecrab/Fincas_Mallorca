@@ -219,6 +219,11 @@
                                     </div>
                                     <div class="form-group">
                                         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                            <span>Importe</span><input id="precio" class="form-control data_fincas" name="precio" readonly="true"></input>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                                             <input id="entrada" class="form-control data_fincas" name="dni" readonly="true" placeholder="Entrada" value=""></input>
                                         </div>
                                         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
